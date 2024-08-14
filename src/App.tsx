@@ -1,6 +1,9 @@
 import Navbar from "./components/Navbar";
 import ItemCard from "./components/ItemCard";
 import Pagination from "./components/Pagination";
+import Category from "./components/Category";
+import Sorting from "./components/Sorting";
+import PriceRange from "./components/PriceSlider";
 
 function App() {
 	return (
@@ -9,16 +12,25 @@ function App() {
 
 			<main className="grid md:grid-cols-4 container mx-auto gap-2 md:gap-4 lg:gap-6 mt-4">
 				{/* left side */}
-				<div className="col-span-1">
-					<h1>Filtering</h1>
+				<div className="w-full md:col-span-1">
+					<h1 className="text-[#2E7D32] text-xl md:text-2xl lg:text-3xl text-center mb-4 font-bold">
+						Filter
+					</h1>
 
-					{/* category */}
+					<div className="w-full">
+						{/* category */}
+						<Category />
 
-					{/* sorting */}
+						{/* sorting */}
+						<Sorting />
+
+						{/* price range */}
+						<PriceRange />
+					</div>
 				</div>
 
 				{/* right side */}
-				<div className="col-span-3">
+				<div className="md:col-span-3">
 					<h1 className="text-[#2E7D32] text-xl md:text-2xl lg:text-3xl text-center mb-4 font-bold">
 						Products
 					</h1>
