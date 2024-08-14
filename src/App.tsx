@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import ItemCard from "./components/ItemCard";
+import Pagination from "./components/Pagination";
 
 function App() {
 	return (
@@ -30,6 +31,10 @@ function App() {
 						<ItemCard />
 						<ItemCard />
 						<ItemCard />
+					</div>
+
+					<div className="flex justify-center mt-4 md:mt-6">
+						<Pagination />
 					</div>
 				</div>
 			</main>
