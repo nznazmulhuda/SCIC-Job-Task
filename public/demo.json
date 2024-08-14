@@ -1,0 +1,92 @@
+[
+	{
+		"productName": "Oversized Hoodie",
+		"productImage": "https://example.com/images/oversized-hoodie.jpg",
+		"description": "This oversized hoodie is designed for ultimate comfort and style. Made from a soft cotton-polyester blend, it provides warmth while being breathable. The relaxed fit and adjustable drawstring hood make it perfect for lounging at home or stepping out for casual activities. It features a large kangaroo pocket in the front, allowing you to keep your hands warm or store small items like keys and your phone. Whether paired with leggings, jeans, or joggers, this hoodie offers a laid-back look that can be worn year-round. Available in various colors, it's a versatile addition to any wardrobe.",
+		"price": 45.0,
+		"category": "Hoodies",
+		"ratings": 4.6,
+		"creationDate": "2024-08-14 16:10:00"
+	},
+	{
+		"productName": "Linen Button-Down Shirt",
+		"productImage": "https://example.com/images/linen-shirt.jpg",
+		"description": "This linen button-down shirt is a perfect blend of comfort and sophistication. Made from 100% breathable linen, it offers a relaxed yet polished look that is ideal for warm weather. The shirt features a traditional collar and front button closure, with long sleeves that can be rolled up for a more casual vibe. It pairs effortlessly with chinos, shorts, or jeans, making it versatile for both formal and casual occasions. Available in neutral tones, this shirt is a timeless piece that provides both comfort and style for any occasion, whether at the office or on a weekend outing.",
+		"price": 40.0,
+		"category": "Shirts",
+		"ratings": 4.5,
+		"creationDate": "2024-08-14 14:55:00"
+	},
+	{
+		"productName": "High-Waisted Skinny Jeans",
+		"productImage": "https://example.com/images/skinny-jeans.jpg",
+		"description": "These high-waisted skinny jeans are the ultimate wardrobe essential for anyone looking for comfort and style. Made from a stretchy cotton blend, they offer a snug fit that hugs your body while allowing easy movement. The high waist provides a flattering silhouette, and the classic five-pocket design adds a functional touch. These jeans can be paired with everything from casual t-shirts to dressy blouses, making them perfect for day-to-night transitions. Available in multiple washes, these skinny jeans are designed to maintain their shape and color after every wash, ensuring long-lasting wear.",
+		"price": 50.0,
+		"category": "Jeans",
+		"ratings": 4.7,
+		"creationDate": "2024-08-14 13:35:00"
+	},
+	{
+		"productName": "Classic Trench Coat",
+		"productImage": "https://example.com/images/trench-coat.jpg",
+		"description": "This classic trench coat combines timeless style with practical functionality. Made from water-resistant fabric, it is designed to keep you dry during rainy days while adding a chic touch to your outfit. The coat features a double-breasted front, a waist belt for a tailored fit, and a back vent for ease of movement. With its sleek, minimalist design, this trench coat is perfect for both casual and formal occasions. Pair it with anything from jeans to dresses for a sophisticated look. The fully lined interior adds warmth, making it suitable for chilly weather as well.",
+		"price": 120.0,
+		"category": "Coats",
+		"ratings": 4.9,
+		"creationDate": "2024-08-14 12:15:00"
+	},
+	{
+		"productName": "Bohemian Maxi Skirt",
+		"productImage": "https://example.com/images/bohemian-skirt.jpg",
+		"description": "This bohemian maxi skirt brings a free-spirited vibe to your wardrobe with its flowy and relaxed silhouette. Made from lightweight fabric, it drapes beautifully and offers comfort for all-day wear. The elastic waistband ensures a perfect fit, while the vibrant patterns add a unique touch to any outfit. Pair it with a simple tank top or blouse for an effortlessly chic look. Whether you're attending a music festival, going on a vacation, or just enjoying a day out, this maxi skirt is the perfect choice for a laid-back yet stylish ensemble.",
+		"price": 35.0,
+		"category": "Skirts",
+		"ratings": 4.5,
+		"creationDate": "2024-08-14 11:00:00"
+	},
+	{
+		"productName": "Athletic Compression Leggings",
+		"productImage": "https://example.com/images/compression-leggings.jpg",
+		"description": "These athletic compression leggings are designed for performance and comfort. Made from moisture-wicking fabric, they keep you dry during intense workouts while providing support to your muscles. The four-way stretch ensures maximum flexibility, allowing for a full range of motion. With a high-rise waistband, these leggings stay in place no matter how active you are, and the seamless design reduces chafing. Whether you're running, doing yoga, or lifting weights, these leggings offer the perfect balance of style and functionality. Available in a variety of colors, they are a must-have for any active wardrobe.",
+		"price": 55.0,
+		"category": "Activewear",
+		"ratings": 4.8,
+		"creationDate": "2024-08-14 09:40:00"
+	},
+	{
+		"productName": "Cotton Pajama Set",
+		"productImage": "https://example.com/images/pajama-set.jpg",
+		"description": "This cotton pajama set is designed for ultimate comfort and relaxation. Made from 100% breathable cotton, the set includes a short-sleeved button-down top and matching elastic-waist pants. The relaxed fit ensures that you can sleep comfortably without feeling restricted. The soft, lightweight fabric makes it perfect for year-round use, keeping you cool in the summer and warm in the winter. The pajama set is available in various prints and solid colors, offering a range of choices to suit your personal style. Whether you're lounging at home or getting ready for bed, this pajama set is your go-to for cozy nights.",
+		"price": 30.0,
+		"category": "Sleepwear",
+		"ratings": 4.7,
+		"creationDate": "2024-08-14 08:25:00"
+	},
+	{
+		"productName": "Silk Scarf",
+		"productImage": "https://example.com/images/silk-scarf.jpg",
+		"description": "This luxurious silk scarf adds an elegant touch to any outfit. Made from 100% pure silk, it is lightweight and smooth to the touch, offering a soft and sophisticated accessory that can be styled in multiple ways. Wear it around your neck, drape it over your shoulders, or tie it to your handbag for a pop of color. The scarf features intricate patterns that are sure to elevate any ensemble, making it suitable for both casual and formal settings. Available in several vibrant colors, this scarf is a versatile addition to your wardrobe that will never go out of style.",
+		"price": 75.0,
+		"category": "Accessories",
+		"ratings": 4.9,
+		"creationDate": "2024-08-14 07:15:00"
+	},
+	{
+		"productName": "Leather Chelsea Boots",
+		"productImage": "https://example.com/images/chelsea-boots.jpg",
+		"description": "These leather Chelsea boots are the perfect combination of style and durability. Crafted from high-quality leather, they feature elastic side panels for easy on-and-off wear, along with a pull tab at the back. The sleek, minimalist design makes them suitable for both casual and formal outfits. The sturdy rubber sole offers traction and support, making these boots perfect for all-day wear. Pair them with jeans, chinos, or even a suit for a versatile look that can be worn year-round. These boots are built to last, making them a smart investment for any wardrobe.",
+		"price": 110.0,
+		"category": "Footwear",
+		"ratings": 4.8,
+		"creationDate": "2024-08-14 06:05:00"
+	},
+	{
+		"productName": "Plaid Wool Scarf",
+		"productImage": "https://example.com/images/plaid-wool-scarf.jpg",
+		"description": "Stay warm in style with this plaid wool scarf. Made from soft, high-quality wool, this scarf offers both warmth and comfort during colder months. The classic plaid pattern adds a touch of sophistication to any outfit, making it perfect for both casual and formal settings. Its generous size allows for multiple styling options, from wrapping it around your neck to draping it over your shoulders. Available in a variety of color combinations, this scarf is a timeless accessory that will complement any winter wardrobe. Whether you're heading to work or a casual outing, this scarf is a must-have for the season.",
+		"price": 40.0,
+		"category": "Accessories",
+		"ratings": 4.6,
+		"creationDate": "2024-08-14 05:00:00"
+	}
+]
