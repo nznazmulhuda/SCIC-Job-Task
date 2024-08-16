@@ -4,8 +4,12 @@ import Pagination from "./components/Pagination";
 import Category from "./components/Category";
 import Sorting from "./components/Sorting";
 import PriceRange from "./components/PriceSlider";
+import { useContext } from "react";
+import { DataContext } from "./context/data.context";
 
 function App() {
+	const { data } = useContext(DataContext);
+	console.log(data);
 	return (
 		<>
 			<Navbar />

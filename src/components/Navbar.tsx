@@ -15,7 +15,6 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import searchData from "../controller/search.tsx";
 import { DataContext } from "../context/data.context.tsx";
 
 const Search = styled("div")(({ theme }) => ({
@@ -59,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-	const { setData, data } = React.useContext(DataContext);
+	const { setQuery } = React.useContext(DataContext);
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
 		React.useState<null | HTMLElement>(null);
@@ -162,11 +161,8 @@ export default function Navbar() {
 	const [searchText, setSearchText] = React.useState("");
 
 	React.useEffect(() => {
-		if (searchText.length > 0) {
-			searchData(searchText, setData);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [searchText]);
+		setQuery(searchText);
+	}, [searchText, setQuery]);
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
