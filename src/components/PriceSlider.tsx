@@ -1,74 +1,66 @@
 import * as React from "react";
-import Slider, { SliderThumb } from "@mui/material/Slider";
-import { styled } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
+import axios from "axios";
+import { DataContext } from "../context/data.context";
 
-const AirbnbSlider = styled(Slider)(({ theme }) => ({
-	color: "#3a8589",
-	height: 3,
-	padding: "13px 0",
-	"& .MuiSlider-thumb": {
-		height: 27,
-		width: 27,
-		backgroundColor: "#fff",
-		border: "1px solid currentColor",
-		"&:hover": {
-			boxShadow: "0 0 0 8px rgba(58, 133, 137, 0.16)",
-		},
-		"& .airbnb-bar": {
-			height: 9,
-			width: 1,
-			backgroundColor: "currentColor",
-			marginLeft: 1,
-			marginRight: 1,
-		},
-	},
-	"& .MuiSlider-track": {
-		height: 3,
-	},
-	"& .MuiSlider-rail": {
-		color: theme.palette.mode === "dark" ? "#bfbfbf" : "#d8d8d8",
-		opacity: theme.palette.mode === "dark" ? undefined : 1,
-		height: 3,
-	},
-}));
-
-type AirbnbThumbComponentProps = React.HTMLAttributes<unknown>;
-
-function AirbnbThumbComponent(props: AirbnbThumbComponentProps) {
-	const { children, ...other } = props;
-	return (
-		<SliderThumb {...other}>
-			{children}
-			<span className="airbnb-bar" />
-			<span className="airbnb-bar" />
-			<span className="airbnb-bar" />
-		</SliderThumb>
-	);
+function valuetext(value: number) {
+	return `${value}°C`;
 }
 
+const minDistance = 10;
+
 export default function CustomizedSlider() {
-	const [rangeValue, setRangeValue] = React.useState([100, 140]);
+	const { setMaxPrice, setMinPrice } = React.useContext(DataContext);
+	const [range, setRange] = React.useState([]);
+	const [value1, setValue1] = React.useState<number[]>([]);
 
 	React.useEffect(() => {
-		console.log("Range value changed:", rangeValue);
-	}, [rangeValue]);
+		axios.get("/data/price_range").then((res) => {
+			setRange([res.data.minPrice, res.data.maxPrice]);
+			setValue1([res.data.minPrice, res.data.maxPrice]);
+		});
+	}, []);
+
+	const handleChange1 = (
+		event: Event,
+		newValue: number | number[],
+		activeThumb: number,
+	) => {
+		if (!Array.isArray(newValue)) {
+			return;
+		}
+
+		if (activeThumb === 0) {
+			setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+		} else {
+			setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+		}
+	};
+
+	React.useEffect(() => {
+		setMinPrice(value1[0]);
+		setMaxPrice(value1[1]);
+	}, [setMaxPrice, setMinPrice, value1]);
+
 	return (
-		<Box width={"100%"}>
-			<Typography gutterBottom>
-				Price Range: {"$" + rangeValue[0] + " - " + "$" + rangeValue[1]}
-			</Typography>
-			<AirbnbSlider
-				slots={{ thumb: AirbnbThumbComponent }}
-				getAriaLabel={(index) =>
-					index === 0 ? "Minimum price" : "Maximum price"
-				}
-				defaultValue={[100, 140]}
-				max={200}
-				min={100}
-				onChange={(e) => setRangeValue(e?.target?.value)}
-			/>
-		</Box>
+		<>
+			<h1 className="hidden md:flex text-sm md:text-lg font-semibold text-green-900 mb-2">
+				Price range: {`$${value1[0]} - $${value1[1]}`}
+			</h1>
+
+			<Box sx={{ width: "100%" }}>
+				<Slider
+					getAriaLabel={() => "Minimum distance"}
+					value={value1}
+					onChange={handleChange1}
+					valueLabelDisplay="auto"
+					getAriaValueText={valuetext}
+					disableSwap
+					max={range[1]}
+					min={range[0]}
+				/>
+			</Box>
+		</>
 	);
 }
