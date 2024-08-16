@@ -29,6 +29,12 @@ export function DataProvider({ children }: { children: JSX.Element }) {
 		setQuery,
 		setPage,
 		setSortBy,
+		category,
+		maxPrice,
+		minPrice,
+		query,
+		page,
+		sortBy,
 	};
 
 	return (
