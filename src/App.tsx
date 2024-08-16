@@ -9,7 +9,7 @@ import { DataContext } from "./context/data.context";
 
 function App() {
 	const { data } = useContext(DataContext);
-	console.log(data);
+
 	return (
 		<>
 			<Navbar />
@@ -42,11 +42,9 @@ function App() {
 					<hr className="mb-6" />
 
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
+						{data.map((item) => (
+							<ItemCard key={item._id} item={item} />
+						))}
 					</div>
 
 					<div className="flex justify-center mt-4 md:mt-6">
