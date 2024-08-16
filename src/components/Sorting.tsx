@@ -4,13 +4,15 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { DataContext } from "../context/data.context";
 
 export default function BasicSelect() {
+	const { setSortBy } = React.useContext(DataContext);
 	const [sort, setSort] = React.useState("");
 
 	const handleChange = (event: SelectChangeEvent) => {
 		setSort(event.target.value);
-		console.log(event.target.value);
+		setSortBy(event.target.value);
 	};
 
 	return (
@@ -29,8 +31,9 @@ export default function BasicSelect() {
 						label="Sorting"
 						onChange={handleChange}
 					>
-						<MenuItem value={"lowToHigh"}>Price Low to High</MenuItem>
-						<MenuItem value={"highToLow"}>Price High to Low</MenuItem>
+						<MenuItem value={""}>Sorting</MenuItem>
+						<MenuItem value={"lth"}>Price Low to High</MenuItem>
+						<MenuItem value={"htl"}>Price High to Low</MenuItem>
 					</Select>
 				</FormControl>
 			</Box>
