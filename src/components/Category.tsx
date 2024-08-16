@@ -4,13 +4,24 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import axios from "axios";
+import { DataContext } from "../context/data.context";
 
 export default function BasicSelect() {
-	const [category, setCategory] = React.useState("");
+	const { setCategory } = React.useContext(DataContext);
+	const [cate, setCate] = React.useState("");
+	const [categories, setCategories] = React.useState([]);
+
+	React.useEffect(() => {
+		axios
+			.get("/category/get_all_category_name")
+			.then((res) => setCategories(res.data))
+			.catch((err) => console.error(err.message));
+	}, []);
 
 	const handleChange = (event: SelectChangeEvent) => {
-		setCategory(event.target.value as string);
-		console.log(event.target.value);
+		setCate(event.target.value);
+		setCategory(event.target.value);
 	};
 
 	return (
@@ -25,13 +36,16 @@ export default function BasicSelect() {
 					<Select
 						labelId="demo-simple-select-label"
 						id="demo-simple-select"
-						value={category}
-						label="Category"
+						value={cate}
+						label={cate === "" ? "Caterory" : "Category"}
 						onChange={handleChange}
 					>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
+						<MenuItem value="">All</MenuItem>
+						{categories?.map((cate) => (
+							<MenuItem key={cate._id} value={cate._id}>
+								{cate._id}
+							</MenuItem>
+						))}
 					</Select>
 				</FormControl>
 			</Box>

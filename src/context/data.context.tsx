@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const DataContext = createContext({});
 
 export function DataProvider({ children }: { children: JSX.Element }) {
-	const [data, setData] = useState({});
+	const [data, setData] = useState([]);
 	const [category, setCategory] = useState("");
 	const [maxPrice, setMaxPrice] = useState("");
 	const [minPrice, setMinPrice] = useState("");
