@@ -16,18 +16,19 @@ export default function PaginationControlled() {
 		sortBy,
 	} = React.useContext(DataContext);
 	const [page, setPage] = React.useState(1);
+	const [isPage, setIsPage] = React.useState(true);
 
 	React.useEffect(() => {
-		if (category || maxPrice || minPrice || query || sortBy) {
-			setTotalCount(Math.ceil(data.length / 9));
-			return;
+		if (data.length < 9) {
+			setIsPage(false);
 		} else {
+			setIsPage(true);
 			axios
 				.get("/data/totalCount")
 				.then((res) => setTotalCount(Math.ceil(res.data.totalData / 9)))
 				.catch((err) => console.error(err));
 		}
-	}, [category, data.length, maxPrice, minPrice, query, sortBy]);
+	}, [category, data, maxPrice, minPrice, page, pageNumber, query, sortBy]);
 
 	const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
 		setPage(value);
@@ -36,7 +37,9 @@ export default function PaginationControlled() {
 
 	return (
 		<Stack spacing={1}>
-			<Pagination count={totalCount} page={page} onChange={handleChange} />
+			{isPage && (
+				<Pagination count={totalCount} page={page} onChange={handleChange} />
+			)}
 		</Stack>
 	);
 }
