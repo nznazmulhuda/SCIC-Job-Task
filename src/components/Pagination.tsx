@@ -6,15 +6,7 @@ import { DataContext } from "../context/data.context";
 
 export default function PaginationControlled() {
 	const [totalCount, setTotalCount] = React.useState(0);
-	const {
-		data,
-		setPage: pageNumber,
-		category,
-		maxPrice,
-		minPrice,
-		query,
-		sortBy,
-	} = React.useContext(DataContext);
+	const { data, setPage: pageNumber } = React.useContext(DataContext);
 	const [page, setPage] = React.useState(1);
 	const [isPage, setIsPage] = React.useState(true);
 
@@ -28,7 +20,7 @@ export default function PaginationControlled() {
 				.then((res) => setTotalCount(Math.ceil(res.data.totalData / 9)))
 				.catch((err) => console.error(err));
 		}
-	}, [category, data, maxPrice, minPrice, page, pageNumber, query, sortBy]);
+	}, [data]);
 
 	const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
 		setPage(value);

@@ -1,7 +1,17 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const DataContext = createContext({});
+interface AppContextType {
+	data: object[];
+	setCategory: React.Dispatch<React.SetStateAction<string>>;
+	setMaxPrice: React.Dispatch<React.SetStateAction<string>>;
+	setMinPrice: React.Dispatch<React.SetStateAction<string>>;
+	setQuery: React.Dispatch<React.SetStateAction<string>>;
+	setPage: React.Dispatch<React.SetStateAction<number>>;
+	setSortBy: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const DataContext = createContext<AppContextType | null>(null);
 
 export function DataProvider({ children }: { children: JSX.Element }) {
 	const [data, setData] = useState([]);
@@ -29,12 +39,6 @@ export function DataProvider({ children }: { children: JSX.Element }) {
 		setQuery,
 		setPage,
 		setSortBy,
-		category,
-		maxPrice,
-		minPrice,
-		query,
-		page,
-		sortBy,
 	};
 
 	return (
