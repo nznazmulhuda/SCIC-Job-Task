@@ -30,14 +30,14 @@ This is a product show case website demo. In this website, there are some produc
 
 3. Firebase: create a .env.local file in the root directory and add it to the .env.local file
 
-	```
-	VITE_APIKEY = your firebase APIKEY
-	VITE_AUTHDOMAIN = your firebase AUTHDOMAIN
-	VITE_PROJECTID = your firebase PROJECTID
-	VITE_STORAGEBUCKET = your firebase STORAGEBUCKET
-	VITE_MESSAGINGSENDERID = your firebase MESSAGINGSENDERID
-	VITE_APPID = your firebase APPID
-```
+   ```
+   VITE_APIKEY = your firebase APIKEY
+   VITE_AUTHDOMAIN = your firebase AUTHDOMAIN
+   VITE_PROJECTID = your firebase PROJECTID
+   VITE_STORAGEBUCKET = your firebase STORAGEBUCKET
+   VITE_MESSAGINGSENDERID = your firebase MESSAGINGSENDERID
+   VITE_APPID = your firebase APPID
+   ```
 
 4. Run the dev server
 
