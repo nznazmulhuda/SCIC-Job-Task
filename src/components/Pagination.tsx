@@ -17,8 +17,7 @@ export default function PaginationControlled() {
 			setIsPage(true);
 			axios
 				.get("/data/totalCount")
-				.then((res) => setTotalCount(Math.ceil(res.data.totalData / 9)))
-				.catch((err) => console.error(err));
+				.then((res) => setTotalCount(Math.ceil(res.data.totalData / 9)));
 		}
 	}, [data]);
 

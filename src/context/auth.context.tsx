@@ -1,7 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
@@ -20,6 +24,10 @@ export const AuthProvider = ({ children }) => {
 		return signInWithPopup(provider);
 	};
 
+	const register = (email, pass) => {
+		return createUserWithEmailAndPassword(auth, email, pass);
+	};
+
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((authUser) => {
 			if (authUser) {
@@ -31,6 +39,6 @@ export const AuthProvider = ({ children }) => {
 		return unsubscribe; // unsubscribe on unmount
 	}, []);
 
-	const value = { user, login, googleLogin };
+	const value = { user, login, googleLogin, register };
 	return <AuthContex.Provider value={value}>{children}</AuthContex.Provider>;
 };
