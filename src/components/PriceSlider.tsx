@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -46,11 +47,11 @@ export default function CustomizedSlider() {
 
 	return (
 		<>
-			<h1 className="hidden md:flex text-sm md:text-lg font-semibold text-green-900 mb-2">
+			<h1 className="flex text-sm md:text-lg font-semibold text-green-900 mb-2">
 				Price range: {`$${value1[0]} - $${value1[1]}`}
 			</h1>
 
-			<Box sx={{ width: "100%" }}>
+			<Box sx={{ width: "90%", margin: "auto" }}>
 				<Slider
 					getAriaLabel={() => "Minimum distance"}
 					value={value1}

@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 import Navbar from "./components/Navbar";
@@ -8,6 +9,7 @@ import Sorting from "./components/Sorting";
 import PriceRange from "./components/PriceSlider";
 import { useContext } from "react";
 import { DataContext } from "./context/data.context";
+import Footer from "./components/Footer";
 
 function App() {
 	const { data } = useContext(DataContext);
@@ -23,7 +25,7 @@ function App() {
 						Filter
 					</h1>
 
-					<div className="w-full">
+					<div className="w-full sticky top-20">
 						{/* category */}
 						<Category />
 
@@ -64,6 +66,8 @@ function App() {
 					)}
 				</div>
 			</main>
+
+			<Footer />
 		</>
 	);
 }
