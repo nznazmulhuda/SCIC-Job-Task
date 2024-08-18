@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import Navbar from "./components/Navbar";
 import ItemCard from "./components/ItemCard";
 import Pagination from "./components/Pagination";
 import Category from "./components/Category";
@@ -9,15 +8,12 @@ import Sorting from "./components/Sorting";
 import PriceRange from "./components/PriceSlider";
 import { useContext } from "react";
 import { DataContext } from "./context/data.context";
-import Footer from "./components/Footer";
 
 function App() {
 	const { data } = useContext(DataContext);
 
 	return (
 		<>
-			<Navbar />
-
 			<main className="grid md:grid-cols-4 container mx-auto gap-2 md:gap-4 lg:gap-6 mt-4">
 				{/* left side */}
 				<div className="w-full md:col-span-1">
@@ -66,8 +62,6 @@ function App() {
 					)}
 				</div>
 			</main>
-
-			<Footer />
 		</>
 	);
 }
