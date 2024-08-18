@@ -30,7 +30,7 @@ This is a product show case website demo. In this website, there are some produc
 
 3. Firebase: create a .env.local file in the root directory and add it to the .env.local file
 
-```
+	```
 	VITE_APIKEY = your firebase APIKEY
 	VITE_AUTHDOMAIN = your firebase AUTHDOMAIN
 	VITE_PROJECTID = your firebase PROJECTID
